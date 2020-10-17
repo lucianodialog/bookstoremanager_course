@@ -8,11 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.luciano.bookstoremanager.entity.Auditable;
+
 import lombok.Data;
 
 @Data
 @Entity
-public class Publisher{
+public class Publisher extends Auditable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
