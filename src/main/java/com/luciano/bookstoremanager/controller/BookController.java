@@ -13,9 +13,8 @@ import io.swagger.annotations.ApiResponses;
 public class BookController {
 	
 	
-	@ApiOperation(value="Retorna um exemplo hello world")
-	@ApiResponses(value = {
-		@ApiResponse(code = 200, message = "Sucesso method return")	
+	@ApiOperation(value="Return an example hello world")
+	@ApiResponses(value = {@ApiResponse(code = 200, message = "Success method return")	
 	})
 	@GetMapping
 	public String hello() {

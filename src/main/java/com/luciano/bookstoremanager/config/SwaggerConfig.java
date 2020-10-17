@@ -14,12 +14,20 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-
+	
+	private static final String CONTACT_EMAIL = "luciano_dialog@yahoo.com.br";
+	private static final String CONTACT_GITHUB = "luciano_dialog@yahoo.com.br";
+	private static final String CONTACT_NAME = "Luciano alexandre da Silva";
+	private static final String API_DESCRIPTION = "Bookstore Manager API Professional";
+	private static final String BASE_PACKAGE = "com.luciano.bookstoremanager";
+	private static final String API_TITLE = "Bookstore Manager Course - Desenvolvida Por Luciano Alexandre";
+	private static final String API_VERSION = "1.0.0";
+	
 	@Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
           .select()
-          .apis(RequestHandlerSelectors.basePackage("com.luciano.bookstoremanager"))
+          .apis(RequestHandlerSelectors.basePackage(BASE_PACKAGE))
           .paths(PathSelectors.any())
           .build().apiInfo(buildApInfo());
     }
@@ -27,10 +35,10 @@ public class SwaggerConfig {
 	   private ApiInfo buildApInfo() {
 
 	        return new ApiInfoBuilder()
-	                .title("Bookstore Manager Course - Desenvolvida Por Luciano Alexandre")
-	                .description("API REST da Loja On-Line.")
-	                .version("1.0")
-	                .contact( new Contact("Luciano alexandre da Silva", "https://www.criawebmobile.com.br", "luciano_dialog@yahoo.com.br"))
+	                .title(API_TITLE)
+	                .description(API_DESCRIPTION)
+	                .version(API_VERSION)
+	                .contact( new Contact(CONTACT_NAME, CONTACT_GITHUB, CONTACT_EMAIL))
 	                .build();
 	    
 	   }
