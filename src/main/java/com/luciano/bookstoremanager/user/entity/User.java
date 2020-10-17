@@ -10,13 +10,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.luciano.bookstoremanager.entity.Auditable;
 import com.luciano.bookstoremanager.user.enums.Gender;
 
 import lombok.Data;
 
 @Data
 @Entity
-public class User {
+public class User extends Auditable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

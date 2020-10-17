@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import com.luciano.bookstoremanager.author.entity.Author;
+import com.luciano.bookstoremanager.entity.Auditable;
 import com.luciano.bookstoremanager.publisher.entity.Publisher;
 import com.luciano.bookstoremanager.user.entity.User;
 
@@ -17,7 +18,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Book {
+public class Book extends Auditable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
